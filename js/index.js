@@ -1,40 +1,57 @@
-
 //Giữa var message và tinhTongSoDuong, các bài còn lại được liên kết với nhau qua mangSo
 //Câu 1:
+//PROGRESS: 
+//B1: Tạo nút tinhTongSoDuong thông id.
 var tinhTongSoDuong = domID('tinhTongSoDuong').onclick = function(){
+    //B2: Tạo biến tongSoDuong = 0.
     var tongSoDuong = 0;
+    //B3: Tạo vòng lặp for, nếu mangSo[index] > 0,thì tongSoDuong += mangSo[index].
     for(index = 0; index <mangSo.length; index++){
         if(mangSo[index] > 0){
             tongSoDuong += mangSo[index];
         }
     }
+    //B4: Gán kết quả tongSoDuong cho biến message.
     message = `<h4> Tổng số dương: ${tongSoDuong}</h4>`;
+    //OUTPUT: dom tới id ketQua1 và xuất ra màn hình biến message.
     domID('ketQua1').innerHTML = message;
 }
 //Câu 2:
+//PROGRESS: 
+//B1: Tạo nút tinhDemSoDuong thông qua id.
 var tinhDemSoDuong = domID('tinhDemSoDuong').onclick = function(){
-    var demSoDuong = 0;
-    var count = 1;
-    for(index = 0; index< mangSo.length; index++){
+    //B2: Tạo vòng lặp for, tạo biến demSoDuong = 0. 
+    for(var demSoDuong = 0, index = 0; index< mangSo.length; index++){
+        //B3: Nếu mangSo[index] > 0, thì tăng biến demSoDuong lên 1. 
         if(mangSo[index] > 0){
-            demSoDuong = count++;
+            demSoDuong++;
         }
     }
+    //B4: Gán kết quả demSoDuong cho biến message.
     message = ` <h4> Đếm số dương: ${demSoDuong}</h4>`;
+    //OUTPUT: dom tới id ketQua2 và xuất ra màn hình biến message.
     domID('ketQua2').innerHTML = message;
 }
 //Câu 3:
+//PROGRESS: 
+//B1: Tạo nút timSoNhoNhat thông qua id.
 var timSoNhoNhat = domID('timSoNhoNhat').onclick = function(){
+    //B2: Cho biến nhapSoNguyen = mangSo[0]. 
     nhapSoNguyen = mangSo[0];
+    //B3: Tạo vòng lặp for.
     for(index = 0; index< mangSo.length; index++){
+        //B4: Nếu mangSo[index] < nhapSoNguyen, thì nhapSoNguyen = mangSo[index]. 
         if(mangSo[index] < nhapSoNguyen){
             nhapSoNguyen = mangSo[index];
         }
     }
+    //B4: Gán kết quả nhapSoNguyen cho biến message.
     message = ` <h4> Số nhỏ nhất: ${nhapSoNguyen}</h4>`;
+    //OUTPUT: dom tới id ketQua3 và xuất ra màn hình biến message.
     domID('ketQua3').innerHTML = message;
 }
 //Câu 4:
+//PROGRESS: Tạo 
 var timSoDuongNhoNhat = domID('timSoDuongNhoNhat').onclick = function(){
     nhapSoNguyen = mangSo[0];
     for(index = 0; index< mangSo.length; index++){
@@ -48,6 +65,7 @@ var timSoDuongNhoNhat = domID('timSoDuongNhoNhat').onclick = function(){
     domID('ketQua4').innerHTML = message;
 }
 //Câu 5:
+//PROGRESS: Tạo 
 var timSoChanCuoiCung = domID('timSoChanCuoiCung').onclick = function(){
     var SoChanCuoiCung = 0;
     for(index = 0; index< mangSo.length; index++){ 
@@ -63,6 +81,7 @@ var timSoChanCuoiCung = domID('timSoChanCuoiCung').onclick = function(){
     domID('ketQua5').innerHTML = message;
 }
 //Câu 6:
+//PROGRESS: Tạo 
 function swap(index0, index1){
     var bienTam = mangSo[index0];
     mangSo[index0] = mangSo[index1];
@@ -74,6 +93,7 @@ var doiCho2GiaTri = domID('doiCho2GiaTri').onclick = function(){
     domID('ketQua6').innerHTML = message;
 }
 //Câu 7:
+//PROGRESS: Tạo 
 var sapXepTangDan = domID('sapXepTangDan').onclick = function(){
     for(index =0; index < mangSo.length; index++){
        for(jdex = 0; jdex < mangSo.length -1; jdex++){
@@ -85,6 +105,7 @@ var sapXepTangDan = domID('sapXepTangDan').onclick = function(){
     domID('ketQua7').innerHTML = message;
 }
 //Câu 8:
+//PROGRESS: Tạo 
 //Số nguyên tố là những số >=2, suy ra ĐIỀU KIỆN 1 ngược lại là số nguyên tố < 2 thì ko được 
 //Số nguyên tố chỉ chia hết cho 1 và chính nó, cho nên ĐIỀU KIỆN 2 là số nguyên tố chia hết cho 2 dư 0 cũng không được.
 //1 không phải là số nguyên tố.
@@ -115,6 +136,7 @@ var timSoNguyenDau = domID('timSoNguyenDau').onclick = function(){
     }  
 }
 //Câu 9:
+//PROGRESS: Tạo 
 mangSoNguyen = [];
 function getInteger(){
     var nhapSoNguyen9 = domID('nhapSoNguyen9').value*1;
@@ -128,6 +150,31 @@ var timSoNguyen = domID('timSoNguyen').onclick = function(){
     }
     message = `<h4> Đếm số nguyên: ${nhapSoNguyen9} </h4>`;
     domID('ketQua9').innerHTML = message; 
+}
+//Câu 10:
+//PROGRESS: Tạo 
+var soSanhSDSA = domID('soSanhSDSA').onclick = function(){ 
+    //Đếm trước mới biết số lượng
+    // var count = 1;
+    for(var demSoDuong = 0, demSoAm = 0, index =0; index < mangSo.length; index++){
+       if(mangSo[index] > 0){
+        demSoDuong++;
+       } else if(mangSo[index] < 0){
+        demSoAm++;
+       }
+    }
+    //Đem số lượng đã đếm đi so sánh
+    if(demSoDuong > demSoAm){
+        message = `Số lượng số dương ${demSoDuong} > Số lượng số âm ${demSoAm} `;
+    }
+    else if(demSoAm > demSoDuong){
+        message = `Số lượng số âm ${demSoAm} > Số lượng số dương ${demSoDuong} `;
+    } else{
+        message = `Số lượng số âm ${demSoAm} = Số lượng số dương ${demSoDuong} `;
+    }
+    //Tạo ra để đếm số trước
+    // message = `<h4> Đếm số dương: ${demSoDuong} </h4> <h4> Đếm số âm: ${demSoAm} </h4> `;
+    domID('ketQua10').innerHTML = message; 
 }
 function domID(id){
     return document.getElementById(id);
